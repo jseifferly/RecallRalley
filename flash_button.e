@@ -8,7 +8,7 @@ but1            cp      flash_x1            flash_num0
                 div     flash_x2            screen_size_x       flash_num2
                 cp      flash_y1            flash_num0
                 div     flash_y2            screen_size_y       flash_num2
-                add     flash_color         screen_color_pink   flash_num100           
+                add     flash_color         screen_color_red    flash_num100           
                 be      go                  0                   0
 
 
@@ -33,7 +33,7 @@ but4            cp      flash_x2            screen_size_x
                 div     flash_x1            screen_size_x       flash_num2
                 cp      flash_y2            screen_size_y
                 div     flash_y1            screen_size_y       flash_num2
-                add     flash_color         screen_color_blue   flash_num100         
+                add     flash_color         screen_color_blu    flash_num100         
                 be      go                  0                   0
 
 
@@ -57,10 +57,6 @@ flash_back      cp      flash_i             flash_num0
                 cp      vga_write           flash_num1
                 call    vga_driver          vga_ra
                 
-                
-
-
-
                 ret     flash_ra
 
 flash_but_num   0
