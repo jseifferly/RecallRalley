@@ -33,7 +33,7 @@ but4            cp      flash_x2            screen_size_x
                 div     flash_x1            screen_size_x       flash_num2
                 cp      flash_y2            screen_size_y
                 div     flash_y1            screen_size_y       flash_num2
-                add     flash_color         screen_color_blue   flash_num100           
+                add     flash_color         screen_color_blue   flash_num100         
                 be      go                  0                   0
 
 
@@ -47,12 +47,20 @@ go              cp      vga_x1              flash_x1
                 cp      vga_write           flash_num1
                 call    vga_driver          vga_ra
                 
+flash_stall     be      flash_back          flash_i             flash_num400000
+                add     flash_i             flash_i             flash_num1  
+                be      flash_stall         0                   0   
+                
+flash_back      cp      flash_i             flash_num0
                 sub     flash_color         flash_color         flash_num100
                 cp      vga_color_write     flash_color
                 cp      vga_write           flash_num1
                 call    vga_driver          vga_ra
                 
                 
+
+
+
                 ret     flash_ra
 
 flash_but_num   0
@@ -62,9 +70,11 @@ flash_num2      2
 flash_num3      3
 flash_num4      4
 flash_num100    100
+flash_num400000 400000
 flash_color     0
 flash_x1        0
 flash_x2        0
 flash_y1        0
 flash_y2        0
 flash_ra        0
+flash_i         0
