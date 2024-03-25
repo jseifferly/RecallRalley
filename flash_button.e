@@ -73,3 +73,5 @@ flash_y1        0
 flash_y2        0
 flash_ra        0
 flash_i         0
+
+#include draw_screen.e
