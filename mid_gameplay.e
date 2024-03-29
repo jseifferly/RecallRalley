@@ -1,8 +1,7 @@
 mid_game  call    clear_screen    clear_ra
           call    startBut        startBut_ra
           call    draw_screen     screen_ra
-          cp      mid_pat         mid_num0
-          
+          cp      mid_patLen      mid_num0
 
 
 m_reset   cp      mid_i           mid_num0
@@ -56,33 +55,33 @@ m_end   call    clear_screen    clear_ra
 
 mid_num0           0
 mid_num1           1
-mid_counter         -1
-mid_i               0
-mid_j           0
-mid_k           0
-mid_num600000   600000
-mid_patNum     0
-mid_patLen     0
-mid_pat         3
-                2
-                1
-                1
-                3
-                4
-                2
-                1
-                4
-                3
-                2
-                4
-                1
-                2
-                4
-                2
-                3
-                3
-                2
-                1
+mid_counter        -1
+mid_i              0
+mid_j              0
+mid_k              0
+mid_num600000      600000
+mid_patNum         0
+mid_patLen         0
+mid_pat            3
+                   2
+                   1
+                   1
+                   3
+                   4
+                   2
+                   1
+                   4
+                   3
+                   2
+                   4
+                   1
+                   2
+                   4
+                   2
+                   3
+                   3
+                   2
+                   1
 
 #include button.e
 #include flash_button.e
