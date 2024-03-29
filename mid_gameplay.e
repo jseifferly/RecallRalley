@@ -1,7 +1,10 @@
 mid_game  call    clear_screen    clear_ra
           call    startBut        startBut_ra
-
           call    draw_screen     screen_ra
+          cp      mid_pat         mid_num0
+          
+
+
 m_reset   cp      mid_i           mid_num0
           cp      mid_j           mid_num0
           cp      mid_k           mid_num0
