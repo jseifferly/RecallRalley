@@ -37,11 +37,6 @@ m_user    call      button          button_ra
           cp        0x80000004      button_act
           cp        flash_but_num   button_act  
           call      flash_button    flash_ra
-  
-          cp      mid_j           mid_num0
-m_stall3  be      m_next          mid_j           mid_num400000
-          add     mid_j           mid_j           mid_num1
-          be      m_stall3        0               0
 
 m_next    cpfa      mid_patNum      mid_pat         mid_k
           bne       m_end           button_act      mid_patNum
@@ -65,7 +60,6 @@ mid_i              0
 mid_j              0
 mid_k              0
 mid_num600000      600000
-mid_num400000      400000
 mid_patNum         0
 mid_patLen         0
 mid_pat            3
