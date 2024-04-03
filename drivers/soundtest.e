@@ -6,7 +6,7 @@ sound_test_loop         cpfa                sound                  sound_array  
         be              done                sound_test_i           sound_arrayS
         be              sound_test_loop     0                      0
 done    cp              sound_test_i        soundtest_num0
-        cp              array               soundtest_num0        
+        cp              sound_array         soundtest_num0        
         ret             soundtest_ra     
 
 sound_test_loop2         cpfa                sound                  sound_array1       sound_test_i
@@ -16,7 +16,7 @@ sound_test_loop2         cpfa                sound                  sound_array1
         be              done1               sound_test_i           sound_array1S
         be              sound_test_loop2     0                      0
 done1   cp              sound_test_i        soundtest_num0
-        cp              array1               soundtest_num0        
+        cp              sound_array1        soundtest_num0        
         ret             soundtest_ra     
 
 sound_test_loop3         cpfa                sound                  sound_array2       sound_test_i
@@ -26,7 +26,7 @@ sound_test_loop3         cpfa                sound                  sound_array2
         be              done2               sound_test_i           sound_array2S
         be              sound_test_loop3     0                      0
 done2   cp              sound_test_i        soundtest_num0
-        cp              array               soundtest_num0        
+        cp              sound_array2        soundtest_num0        
         ret             soundtest_ra     
 
 sound_test_loop4         cpfa                sound                  sound_array3       sound_test_i
@@ -36,7 +36,7 @@ sound_test_loop4         cpfa                sound                  sound_array3
         be              done3               sound_test_i           sound_array3S
         be              sound_test_loop4    0                      0
 done3   cp              sound_test_i        soundtest_num0
-        cp              array               soundtest_num0        
+        cp              sound_array3        soundtest_num0        
         ret             soundtest_ra     
 
 
