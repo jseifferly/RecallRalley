@@ -17,7 +17,7 @@ but2            cp      flash_x2            screen_size_x
                 div     flash_x1            screen_size_x       flash_num2
                 cp      flash_y1            flash_num0
                 div     flash_y2            screen_size_y       flash_num2
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop2     soundtest_ra
                 cp     flash_color          screen_color_yel               
                 be      go                  0                   0
 
@@ -26,7 +26,7 @@ but3            cp      flash_x1            flash_num0
                 div     flash_x2            screen_size_x       flash_num2
                 cp      flash_y2            screen_size_y
                 div     flash_y1            screen_size_y       flash_num2
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop3     soundtest_ra
                 cp      flash_color         screen_color_gre               
                 be      go                  0                   0
 
@@ -36,7 +36,7 @@ but4            cp      flash_x2            screen_size_x
                 div     flash_x1            screen_size_x       flash_num2
                 cp      flash_y2            screen_size_y
                 div     flash_y1            screen_size_y       flash_num2
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop4     soundtest_ra
                 cp      flash_color         screen_color_blu             
                 be      go                  0                   0
 
