@@ -1,52 +1,71 @@
 
-sound_test_loop         cpfa                sound                  array       sound_test_i
-        cp              param               sound      
+sound_test_loop         cpfa                sound                  sound_array       sound_test_i
+        cp              sound_param               sound      
         call            sounddriver         driv_ra
-        add             sound_test_i        sound_test_i           plus1
-        be              done                sound_test_i           arrayS
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done                sound_test_i           sound_arrayS
         be              sound_test_loop     0                      0
-done    cp              sound_test_i        num_0
-        cp              array               num_0        
+done    cp              sound_test_i        soundtest_num0
+        cp              sound_array         soundtest_num0        
         ret             soundtest_ra     
 
-sound_test_loop2         cpfa                sound                  array1       sound_test_i
-        cp              param               sound      
+sound_test_loop2         cpfa                sound                  sound_array1       sound_test_i
+        cp              sound_param               sound      
         call            sounddriver         driv_ra
-        add             sound_test_i        sound_test_i           plus1
-        be              done1               sound_test_i           array1S
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done1               sound_test_i           sound_array1S
         be              sound_test_loop2     0                      0
-done1   cp              sound_test_i        num_0
-        cp              array1               num_0        
+done1   cp              sound_test_i        soundtest_num0
+        cp              sound_array1        soundtest_num0        
         ret             soundtest_ra     
 
-sound_test_loop3         cpfa                sound                  array2       sound_test_i
-        cp              param               sound      
+sound_test_loop3         cpfa                sound                  sound_array2       sound_test_i
+        cp              sound_param               sound      
         call            sounddriver         driv_ra
-        add             sound_test_i        sound_test_i           plus1
-        be              done2               sound_test_i           array2S
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done2               sound_test_i           sound_array2S
         be              sound_test_loop3     0                      0
-done2   cp              sound_test_i        num_0
-        cp              array               num_0        
+done2   cp              sound_test_i        soundtest_num0
+        cp              sound_array2        soundtest_num0        
         ret             soundtest_ra     
 
-sound_test_loop4         cpfa                sound                  array3       sound_test_i
-        cp              param               sound      
+sound_test_loop4         cpfa                sound                  sound_array3       sound_test_i
+        cp              sound_param               sound      
         call            sounddriver         driv_ra
-        add             sound_test_i        sound_test_i           plus1
-        be              done3               sound_test_i           array3S
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done3               sound_test_i           sound_array3S
         be              sound_test_loop4    0                      0
-done3   cp              sound_test_i        num_0
-        cp              array               num_0        
+done3   cp              sound_test_i        soundtest_num0
+        cp              sound_array3        soundtest_num0        
         ret             soundtest_ra     
 
+sound_test_loop5         cpfa                sound                  sound_array4       sound_test_i
+        cp              sound_param               sound      
+        call            sounddriver         driv_ra
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done4               sound_test_i           sound_array4S
+        be              sound_test_loop5    0                      0
+done4   cp              sound_test_i        soundtest_num0
+        cp              sound_array4        soundtest_num0        
+        ret             soundtest_ra     
+
+sound_test_loop6         cpfa                sound                  sound_array5       sound_test_i
+        cp              sound_param               sound      
+        call            sounddriver         driv_ra
+        add             sound_test_i        sound_test_i           sound_plus1
+        be              done5               sound_test_i           sound_array5S
+        be              sound_test_loop6    0                      0
+done5   cp              sound_test_i        soundtest_num0
+        cp              sound_array5        soundtest_num0        
+        ret             soundtest_ra     
 
 soundtest_ra       0
-num_0              0
+soundtest_num0     0
 sound_test_i       0
-plus1   1
-arrayS  90    
+sound_plus1   1
+sound_arrayS  90    
 sound   0
-array   0
+sound_array   0
         363717072
         684428797
         924214714
@@ -138,7 +157,7 @@ array   0
         -426434300
         -67420806
 
-array1   0
+sound_array1   0
         363717072
         924214714
         1060522280
@@ -205,9 +224,9 @@ array1   0
         1060522280
         710078208
         
-array1S 65
+sound_array1S 65
 
-array2  0
+sound_array2  0
         300000000
         400000000
         500000000
@@ -319,9 +338,9 @@ array2  0
         100000000
         200000000
 
-array2S 110
+sound_array2S 110
 
-array3  0
+sound_array3  0
         300000000
         350000000
         400000000
@@ -461,5 +480,103 @@ array3  0
         200000000
         250000000
 
-array3S 138
+sound_array3S 138
+
+sound_array4    0
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+        363717072
+        1060522280
+        710078208
+        -658103937
+        -956710970
+        -426434300
+
+sound_array4S   42
+
+sound_array5    0
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+        500000000
+        1000000000
+        500000000
+        -100000000
+        -500000000
+        -1000000000
+        -500000000
+        100000000
+
+sound_array5S   48
 #include sounddriver.e
