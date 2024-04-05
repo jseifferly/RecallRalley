@@ -1,10 +1,11 @@
 game      call    clear_screen    clear_ra
           call    startBut        startBut_ra
-          cp      screen_diff     game_num3
+          cp      game_diff       game_num3
+          cp      screen_diff     game_diff
           call    draw_screen     screen_ra
           cp      game_patLen     game_num0
-          cp      flash_diff      game_num3
-          cp      button_diff     game_num3
+          cp      flash_diff      game_diff
+          cp      button_diff     game_diff
 
 
 g_reset   cp      game_i          game_num0
@@ -61,6 +62,7 @@ game_num1           1
 game_num2           2
 game_num3           3
 game_counter        -1
+game_diff           0
 game_i              0
 game_j              0
 game_k              0
