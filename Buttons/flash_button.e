@@ -19,7 +19,7 @@ feas_but2       div     flash_x1            screen_size_x       flash_num2
                 cp      flash_x2            screen_size_x
                 cp      flash_y1            flash_num0
                 cp      flash_y2            screen_size_y
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop2     soundtest_ra
                 cp      flash_color         flash_blue              
                 be      flash_go            0                   0
                
@@ -88,7 +88,7 @@ fhar_but2       div     flash_x1            screen_size_x       flash_num3
                 mult    flash_x2            flash_x2            flash_num2
                 cp      flash_y1            flash_num0
                 div     flash_y2            screen_size_y       flash_num2
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop2     soundtest_ra
                 cp      flash_color         flash_blue               
                 be      flash_go            0                   0
 
@@ -97,7 +97,7 @@ fhar_but3       div     flash_x1            screen_size_x       flash_num3
                 cp      flash_x2            screen_size_x
                 cp      flash_y1            flash_num0
                 div     flash_y2            screen_size_y       flash_num2
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop3     soundtest_ra
                 cp      flash_color         flash_green               
                 be      flash_go            0                   0
 
@@ -105,7 +105,7 @@ fhar_but4       cp      flash_x1            flash_num0
                 div     flash_x2            screen_size_x       flash_num3
                 div     flash_y1            screen_size_y       flash_num2
                 cp      flash_y2            screen_size_y
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop4     soundtest_ra
                 cp      flash_color         flash_yel              
                 be      flash_go            0                   0
 
@@ -114,7 +114,7 @@ fhar_but5       div     flash_x1            screen_size_x       flash_num3
                 mult    flash_x2            flash_x2            flash_num2
                 div     flash_y1            screen_size_y       flash_num2
                 cp      flash_y2            screen_size_y
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop5     soundtest_ra
                 cp      flash_color         flash_purp               
                 be      flash_go            0                   0
 
@@ -123,7 +123,7 @@ fhar_but6       div     flash_x1            screen_size_x       flash_num3
                 cp      flash_x2            screen_size_x
                 div     flash_y1            screen_size_y       flash_num2
                 cp      flash_y2            screen_size_y
-                call    sound_test_loop     soundtest_ra
+                call    sound_test_loop6     soundtest_ra
                 cp      flash_color         flash_org              
                 be      flash_go            0                   0
 
