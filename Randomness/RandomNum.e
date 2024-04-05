@@ -58,9 +58,9 @@ r_hard_5        cp          random_digit          random_num5
 r_hard_6        cp          random_digit          random_num6
                 bne         r_end                 random_digit        random_num0
 
-r_end           ret                    
+r_end           ret         r_rand_ra                   
 
-random_difficulty       3
+random_difficulty       0
 random_digit            0
 random_num-1            -1
 random_num10            10
