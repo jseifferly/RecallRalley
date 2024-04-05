@@ -1,6 +1,6 @@
 game      call    clear_screen         clear_ra
-          call    startBut             startBut_ra
-          cp      game_diff            game_num2
+          call    menu                 menu_ra
+          cp      game_diff            menu_diff
           cp      random_difficulty    game_diff
           call    RandomArray          r_ret_array
           cp      screen_diff          game_diff
