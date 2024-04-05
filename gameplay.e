@@ -8,7 +8,7 @@ game      call    clear_screen         clear_ra
           cp      game_patLen          game_num0
           cp      flash_diff           game_diff
           cp      button_diff          game_diff
-          cp      game_counter         game_num0
+          cp      game_counter         game_numn1
 
 g_reset   cp      game_i               game_num0
           cp      game_j               game_num0
@@ -62,7 +62,8 @@ game_num0           0
 game_num1           1
 game_num2           2
 game_num3           3
-game_counter        -1
+game_numn1          -1
+game_counter        0
 game_diff           0
 game_i              0
 game_j              0
