@@ -15,6 +15,6 @@ clear_x1    0
 clear_y1    0
 clear_x2    639
 clear_y2    479
-clear_color 100000255
+clear_color 0
 clear_ra    0
 clear_num1  1
