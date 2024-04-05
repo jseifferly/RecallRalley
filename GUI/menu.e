@@ -1,4 +1,12 @@
 menu
+           sub     vga_y1            menu_y1         menu_num10
+           add     vga_y2            menu_y2         menu_num10
+           sub     vga_x1            menu_ex1        menu_num10
+           add     vga_x2            menu_ex2        menu_num10
+           cp      vga_color_write   menu_num0
+           cp      vga_write         menu_num1
+           call    vga_driver        vga_ra
+           
            cp      vga_y1            menu_y1
            cp      vga_y2            menu_y2
 
@@ -8,11 +16,35 @@ menu
            cp      vga_write         menu_num1
            call    vga_driver        vga_ra
 
+           sub     vga_y1            menu_y1         menu_num10
+           add     vga_y2            menu_y2         menu_num10
+           sub     vga_x1            menu_mx1        menu_num10
+           add     vga_x2            menu_mx2        menu_num10
+           cp      vga_color_write   menu_num0
+           cp      vga_write         menu_num1
+           call    vga_driver        vga_ra
+           
+
+           cp      vga_y1            menu_y1
+           cp      vga_y2            menu_y2
+
            cp      vga_x1            menu_mx1
            cp      vga_x2            menu_mx2
            cp      vga_color_write   menu_mcol
            cp      vga_write         menu_num1
            call    vga_driver        vga_ra
+
+
+           sub     vga_y1            menu_y1         menu_num10
+           add     vga_y2            menu_y2         menu_num10
+           sub     vga_x1            menu_hx1        menu_num10
+           add     vga_x2            menu_hx2        menu_num10
+           cp      vga_color_write   menu_num0
+           cp      vga_write         menu_num1
+           call    vga_driver        vga_ra
+
+           cp      vga_y1            menu_y1
+           cp      vga_y2            menu_y2
 
            cp      vga_x1            menu_hx1
            cp      vga_x2            menu_hx2
@@ -50,19 +82,20 @@ menu_num0   0
 menu_num1   1
 menu_num2   2
 menu_num3   3
+menu_num10  5
 menu_diff   0
 menu_x      0
 menu_y      0
-menu_y1     140
-menu_y2     340
-menu_ex1    100
-menu_ex2    210
+menu_y1     150
+menu_y2     330
+menu_ex1    90
+menu_ex2    200
 menu_ecol   65280
-menu_mx1    260
-menu_mx2    370
+menu_mx1    250
+menu_mx2    360
 menu_mcol   16776960
-menu_hx1    420
-menu_hx2    530
+menu_hx1    410
+menu_hx2    520
 menu_hcol   16711680
 menu_press  0
 menu_ra     0
