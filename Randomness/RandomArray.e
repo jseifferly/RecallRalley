@@ -58,7 +58,7 @@ r_hard_check    blt         RandomArray             random_one_count            
                 blt         RandomArray             random_six_count            random_num3
                 be          r_ending                random_num1                 random_num1
 
-r_ending        r_ret_array
+r_ending        ret         r_ret_array
 
 
 r_ret_array             0
