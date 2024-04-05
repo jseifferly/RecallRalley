@@ -1,6 +1,6 @@
 game      call    clear_screen         clear_ra
           call    startBut             startBut_ra
-          cp      game_diff            game_num3
+          cp      game_diff            game_num2
           cp      random_difficulty    game_diff
           call    RandomArray          r_ret_array
           cp      screen_diff          game_diff
@@ -8,6 +8,7 @@ game      call    clear_screen         clear_ra
           cp      game_patLen          game_num0
           cp      flash_diff           game_diff
           cp      button_diff          game_diff
+          cp      game_counter         game_num0
 
 g_reset   cp      game_i               game_num0
           cp      game_j               game_num0
