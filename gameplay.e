@@ -48,7 +48,7 @@ g_user    call      button             button_ra
           call      flash_button       flash_ra
 
 
-g_next    cpfa      game_patNum        random_array    game_k
+g_check   cpfa      game_patNum        random_array    game_k
           bne       g_end              button_act      game_patNum
           add       game_k             game_k          game_num1
           be        g_reset            game_k          game_patLen
@@ -56,7 +56,10 @@ g_next    cpfa      game_patNum        random_array    game_k
 
 
 
-g_end     be        game               0               0
+g_end   call      Lscreen            L_ra
+g_loop  call      touch_driver       touch_ra
+        bne       g_loop             touch_pressed      game_num1
+        be        game               0                  0
         halt
 
 
@@ -74,6 +77,8 @@ game_i              0
 game_j              0
 game_k              0
 game_num600000      600000
+game_send           0
+game_recive         0
 game_patNum         0
 game_patLen         0
 game_pat            2
@@ -93,3 +98,5 @@ game_pat            2
 #include menu.e
 #include RandomArray.e
 #include highscore.e
+#include Wscreen.e 
+#include Lscreen.e 
