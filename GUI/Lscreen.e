@@ -28,3 +28,4 @@ L_num280    280
 L_num270    270
 L_num20     20
 L_num60     60
+L_ra        0
