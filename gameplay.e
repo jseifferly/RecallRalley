@@ -55,7 +55,7 @@ g_mult    bne       g_next             menu_mult       game_num1
           cp        driver_send_length game_num1
           call      serialsend         driver_send_ret
 g_get     call      serialrec          driver_receive_ret
-          be        g_get              driver_receive_data  game_num0
+          be        g_get              driver_receive_data  game_numn1
           be        g_next             driver_receive_data  game_num1
           bne       g_not2             driver_receive_data  game_num2
           call      Wscreen            W_ra
