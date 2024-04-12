@@ -52,9 +52,9 @@ g_mult    bne       g_next             menu_mult       game_num1
           cp        driver_send_arr    game_pass
           cp        driver_send_length game_num1
           call      serialsend         driver_send_ret
-          call      serialrec          driver_recive_ret
-          be        g_next             serial_recive_data  game_num1
-          bne       g_not2             serial_recive_data  game_num2
+          call      serialrec          driver_receive_ret
+          be        g_next             driver_receive_data  game_num1
+          bne       g_not2             driver_receive_data  game_num2
           call      Wscreen            W_ra
           be        g_loop             0                   0
 g_not2    call      Lscreen            L_ra  
