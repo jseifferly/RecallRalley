@@ -11,11 +11,11 @@ game      call    clear_screen         clear_ra
           cp      game_counter         game_numn1
           cp      high_diff            game_diff
 
-
 g_reset   cp      game_i               game_num0
           cp      game_j               game_num0
           cp      game_k               game_num0
           cp      game_patNum          game_num0
+          cp      game_pass            game_num0
           add     game_counter         game_counter    game_num1
           cp      0x80000003           game_counter
           cp      high_com             game_counter
@@ -25,10 +25,7 @@ g_reset   cp      game_i               game_num0
 g_stall1  be      g_pattern            game_j        game_num600000
           add     game_j               game_j        game_num1
           be      g_stall1             0             0
-     
-     
-     
-     
+         
 g_pattern cpfa    game_patNum          random_array   game_i
           be      g_user               game_i         game_patLen
           cp      flash_but_num        game_patNum
@@ -39,9 +36,6 @@ g_stall2  be      g_pattern            game_j         game_num600000
           add     game_j               game_j         game_num1
           be      g_stall2             0              0
      
-            
-     
-     
 g_user    call      button             button_ra
           bne       g_user             button_press    game_num1
           cp        flash_but_num      button_act  
@@ -51,8 +45,26 @@ g_user    call      button             button_ra
 g_check   cpfa      game_patNum        random_array    game_k
           bne       g_end              button_act      game_patNum
           add       game_k             game_k          game_num1
-          be        g_reset            game_k          game_patLen
+          cp        game_pass          game_num1  
+       
+         
+g_mult    bne       g_next             menu_mult       game_num1
+          cp        driver_send_arr    game_pass
+          cp        driver_send_length game_num1
+          call      serialsend         driver_send_ret
+          call      serialrec          driver_recive_ret
+          be        g_next             serial_recive_data  game_num1
+          bne       g_not2             serial_recive_data  game_num2
+          call      Wscreen            W_ra
+          be        g_loop             0                   0
+g_not2    call      Lscreen            L_ra  
+          be        g_loop             0                   0
+
+
+        
+g_next    be        g_reset            game_k          game_patLen
           be        g_user             0               0
+
 
 
 
@@ -61,8 +73,6 @@ g_loop  call      touch_driver       touch_ra
         bne       g_loop             touch_pressed      game_num1
         be        game               0                  0
         halt
-
-
 
 game_num0           0
 game_num1           1
@@ -79,6 +89,7 @@ game_k              0
 game_num600000      600000
 game_send           0
 game_recive         0
+game_pass           0
 game_patNum         0
 game_patLen         0
 game_pat            2
@@ -100,3 +111,5 @@ game_pat            2
 #include highscore.e
 #include Wscreen.e 
 #include Lscreen.e 
+#include serialsend.e 
+#include serialrec.e
