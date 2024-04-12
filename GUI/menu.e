@@ -67,6 +67,7 @@ menu_loop  call    touch_driver      touch_ra
            cp      menu_press        touch_pressed
            cp      menu_x            touch_x 
            cp      menu_y            touch_y
+           cp      0x80000002        menu_mult
            
            bne     menu_loop         menu_press         menu_num1
            blt     menu_loop         menu_y             menu_y1
