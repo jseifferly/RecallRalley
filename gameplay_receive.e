@@ -49,7 +49,7 @@ g_check   cpfa      game_patNum        random_array    game_k
        
          
 g_mult    bne       g_next             menu_mult       game_num1
-mult_loop call      serialrec          driver_recive_ret
+mult_loop call      serialrec          driver_receive_ret
           be        mult_loop          driver_receive_data      game_numn1 
           cp        game_sent          driver_receive_data
           be        g_pass             game_sent       game_num1
