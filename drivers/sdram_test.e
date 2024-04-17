@@ -26,6 +26,7 @@ start   be      next     i    size
         cp      sdram_write     num1
         cp      sdram_address      i
         cp      sdram_data_write     data
+        call    sdram_driver    sdram_ret
         add     i       i       num1
         be      start   0       0
 next    be      end     j       size
