@@ -43,19 +43,19 @@ g_user    call      button             button_ra
 
 
 g_check   cpfa      game_patNum        random_array    game_k
+          cp        driver_receive_data  game_num0
           be        g_cont             button_act      game_patNum
           bne       g_end              menu_mult       game_num1
-          cp        game_pass          game_num0       
+          cp        game_pass          game_num1       
           be        g_mult             0               0
 g_cont    add       game_k             game_k          game_num1
-          cp        game_pass          game_num1  
+          cp        game_pass          game_num2 
                 
 g_mult    bne       g_next             menu_mult       game_num1
-          cp        driver_send_arr    game_pass
-          cp        driver_send_length game_num1
+          cp        driver_send_data   game_pass
           call      serialsend         driver_send_ret
 g_get     call      serialrec          driver_receive_ret
-          be        g_get              driver_receive_data  game_numn1
+          be        g_get              driver_receive_data  game_num0
           be        g_next             driver_receive_data  game_num1
           bne       g_not2             driver_receive_data  game_num2
           call      Wscreen            W_ra
@@ -95,17 +95,6 @@ game_recive         0
 game_pass           0
 game_patNum         0
 game_patLen         0
-game_pat            2
-                    3
-                    5
-                    4
-                    4
-                    6
-                    1
-                    3
-                    1
-                    2
-                    4
 
 #include button.e
 #include flash_button.e
@@ -114,5 +103,5 @@ game_pat            2
 #include highscore.e
 #include Wscreen.e 
 #include Lscreen.e 
-#include serialsend.e 
+#include serialsend1.e 
 #include serialrec.e
