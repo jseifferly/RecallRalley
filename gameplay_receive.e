@@ -43,13 +43,16 @@ g_user    call      button             button_ra
 
 
 g_check   cpfa      game_patNum        random_array    game_k
-          bne       g_end              button_act      game_patNum
-          add       game_k             game_k          game_num1
+          be        g_cont             button_act      game_patNum
+          bne       g_end              menu_mult       game_num1
+          cp        game_pass          game_num1
+          be        g_mult             0               0
+g_cont    add       game_k             game_k          game_num1
           cp        game_pass          game_num1  
        
          
 g_mult    bne       g_next             menu_mult       game_num1
-mult_loop call      serialrec          driver_receive_ret
+mult_loop call      serialrec          driver_recive_ret
           be        mult_loop          driver_receive_data      game_numn1 
           cp        game_sent          driver_receive_data
           be        g_pass             game_sent       game_num1
