@@ -15,7 +15,7 @@ sdram_driver    cp      0x80000032      sdram_write
                 cp      0x80000033      sdram_address
                 cp      0x80000030      num__1
 check1          be      check1          num__0      0x80000031
-                be      write1     sdram_write      num1
+                be      write1     sdram_write      num__1
                 cp      sdram_data_read      0x80000035
                 cp      0x80000030      num__0
                 ret     sdram_ret
