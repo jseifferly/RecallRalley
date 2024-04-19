@@ -17,7 +17,7 @@ sound_test_loop2      be      re_ret    re   re_size
         call    sounddriver     sound_ra
         add     re      re   sound_test_num1
         be      sound_test_loop2  0   0
-re_ret  cp      re      do_beg
+re_ret  cp      re      re_beg
         ret     soundtest_ra
 
 sound_test_loop3      be      mi_ret    mi   mi_size
@@ -28,7 +28,7 @@ sound_test_loop3      be      mi_ret    mi   mi_size
         call    sounddriver     sound_ra
         add     mi      mi   sound_test_num1
         be      sound_test_loop3  0   0
-mi_ret  cp      mi      re_beg
+mi_ret  cp      mi      mi_beg
         ret     soundtest_ra
 
 sound_test_loop4      be      fa_ret    fa   fa_size
@@ -39,7 +39,7 @@ sound_test_loop4      be      fa_ret    fa   fa_size
         call    sounddriver     sound_ra
         add     fa      fa   sound_test_num1
         be      sound_test_loop4  0   0
-fa_ret  cp      fa      mi_beg
+fa_ret  cp      fa      fa_beg
         ret     soundtest_ra
 
 sound_test_loop5      be      sol_ret    sol   sol_size
@@ -50,7 +50,7 @@ sound_test_loop5      be      sol_ret    sol   sol_size
         call    sounddriver     sound_ra
         add     sol      sol   sound_test_num1
         be      sound_test_loop5  0   0
-sol_ret cp      sol      fa_beg
+sol_ret cp      sol      sol_beg
         ret     soundtest_ra
 
 sound_test_loop6      be      la_ret    la   la_size
@@ -61,7 +61,7 @@ sound_test_loop6      be      la_ret    la   la_size
         call    sounddriver     sound_ra
         add     la      la   sound_test_num1
         be      sound_test_loop6  0   0
-la_ret  cp      la      sol_beg
+la_ret  cp      la      la_beg
         ret     soundtest_ra
 
 
@@ -69,8 +69,8 @@ soundtest_ra   0
 sound_test_num0 0
 sound_test_num1 1
 do  0
-do_size 1989
 do_beg  0
+do_size 1989
 re      3989
 re_beg  3989
 re_size 5952
