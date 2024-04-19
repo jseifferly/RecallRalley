@@ -22,9 +22,7 @@ feas_but2       div     flash_x1            screen_size_x       flash_num2
                 call    sound_test_loop2     soundtest_ra
                 cp      flash_color         flash_blue              
                 be      flash_go            0                   0
-               
-               
-               
+                   
                
 flash_mid       be      fmid_but1           flash_but_num       flash_num1
                 be      fmid_but2           flash_but_num       flash_num2
@@ -175,5 +173,5 @@ flash_y2        0
 flash_ra        0
 flash_i         0
 
-#include soundtest.e
+#include soundtest1.e
 #include draw_screen.e
