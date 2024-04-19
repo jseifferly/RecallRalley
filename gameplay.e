@@ -1,3 +1,14 @@
+g_load    be      game                 game_n             game_size
+          cp      sd_write             game_num0    
+          cp      sd_address           game_n
+          call    sd_card              sd_ra
+          cp      game_data            sd_data_read
+          cp      sdram_write          game_num1
+          cp      sdram_address        game_n
+          cp      sdram_data_write     game_data
+          call    sdram_driver         sdram_ret
+          add     game_n               game_n             game_num1
+          be      g_load               0                  0 
 game      call    clear_screen         clear_ra
           call    menu                 menu_ra
           cp      game_diff            menu_diff
@@ -14,6 +25,7 @@ game      call    clear_screen         clear_ra
 g_reset   cp      game_i               game_num0
           cp      game_j               game_num0
           cp      game_k               game_num0
+          cp      game_n               game_num0
           cp      game_patNum          game_num0
           cp      game_pass            game_num0
           add     game_counter         game_counter    game_num1
@@ -89,12 +101,15 @@ game_highs          0
 game_i              0
 game_j              0
 game_k              0
+game_n              0
 game_num600000      600000
 game_send           0
 game_recive         0
 game_pass           0
 game_patNum         0
 game_patLen         0
+game_size              23926
+game_data              0
 
 #include button.e
 #include flash_button.e
@@ -105,3 +120,4 @@ game_patLen         0
 #include Lscreen.e 
 #include serialsend1.e 
 #include serialrec.e
+#include sd_card_driver.e
