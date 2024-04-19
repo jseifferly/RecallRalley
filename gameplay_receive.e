@@ -1,3 +1,14 @@
+g_load    be      game                 game_n             game_size
+          cp      sd_write             game_num0    
+          cp      sd_address           game_n
+          call    sd_card              sd_ra
+          cp      game_data            sd_data_read
+          cp      sdram_write          game_num1
+          cp      sdram_address        game_n
+          cp      sdram_data_write     game_data
+          call    sdram_driver         sdram_ret
+          add     game_n               game_n             game_num1
+          be      g_load               0                  0  
 game      call    clear_screen         clear_ra
           call    menu                 menu_ra
           cp      game_diff            menu_diff
@@ -80,11 +91,13 @@ g_doublelose cp     game_decision      game_num3
              be     g_continue         0               0
        
 g_win        cp     driver_send_data   game_num3
-             call   serialsend         driver_send_ret           
+             call   serialsend         driver_send_ret
+             call      Wscreen            W_ra
+             be        g_loop             0                   0           
 
 g_continue be        g_next             game_decision  game_num1
-           be        g_not2             game_decision  game_num2
-           call      Wscreen            W_ra
+           bne       g_not2             game_decision  game_num2
+           call      Lscreen            L_ra
            be        g_loop             0                   0
 g_not2     call      Lscreen            L_ra  
            be        g_loop             0                   0
@@ -114,6 +127,7 @@ game_ra             0
 game_diff           0
 game_highs          0
 game_i              0
+game_n              0
 game_j              0
 game_k              0
 game_num600000      600000
@@ -123,17 +137,8 @@ game_sent           0
 game_pass           0
 game_patNum         0
 game_patLen         0
-game_pat            2
-                    3
-                    5
-                    4
-                    4
-                    6
-                    1
-                    3
-                    1
-                    2
-                    4
+game_size              23926
+game_data              0
 
 #include button.e
 #include flash_button.e
@@ -144,3 +149,4 @@ game_pat            2
 #include Lscreen.e 
 #include serialsend1.e 
 #include serialrec.e
+#include sd_card_driver.e
