@@ -69,7 +69,7 @@ soundtest_ra   0
 sound_test_num0 0
 sound_test_num1 1
 do  0
-do_size 3989
+do_size 1989
 do_beg  0
 re      3989
 re_beg  3989
