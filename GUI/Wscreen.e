@@ -20,7 +20,7 @@ Wscreen     call        clear_screen        clear_ra
             cp          vga_y1              W_num280
             call        vga_driver          vga_ra 
 
-            halt
+            ret         W_ra
 
 W_x1        0
 W_x2        0
